@@ -1,0 +1,60 @@
+﻿
+@media (max-width: 1024px) {
+	.hero{
+		min-height: 769px;
+	}
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding: 0;
+    }
+
+        .navbar-brand img {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+    .communities div {
+        margin-bottom: 50px;
+    }
+
+    .owl-item .item p.title{
+        font-size: 27px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        white-space: nowrap; 
+        line-height: 1.487587;
+    }
+	
+	.hero{
+		min-height: 1025px;
+	}
+	
+}
+
+@media (max-width: 414px){
+	.hero{
+		min-height: 525px;
+	}
+}
+
+@media (max-width: 320px) {
+    .navbar-brand {
+        padding: 0;
+    }
+
+        .navbar-brand img {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+    .communities div {
+        margin-bottom: 50px;
+    }
+	
+	.hero{
+		min-height: 551px;
+	}
+}

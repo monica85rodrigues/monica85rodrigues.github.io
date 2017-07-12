@@ -1,0 +1,121 @@
+﻿/* http://ironsummitmedia.github.io/startbootstrap-grayscale/ */
+
+
+.gray-section {
+    color: #333333;
+    background-color: #E8E8E8;
+}
+
+.container-title {
+    color: #333333;
+    letter-spacing: -3px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+@media (max-width:767px){
+	.container-title{
+		font-size: 31px;
+	}
+}
+
+.dash-title{
+    background:#333333;
+    width:3%;
+    height:3px;
+    display:inline-block;
+    vertical-align:middle;
+    border:none;
+}
+
+.container-text {
+    text-transform: none;
+    padding: 15px 0;
+}
+
+.top-nav-collapse {
+    -webkit-box-shadow: 0px 1px 10px black;
+    -moz-box-shadow: 0px 1px 10px black;
+    box-shadow: 0px 1px 10px black;
+}
+
+
+.list-inline-images > div {
+    display: inline-block;
+    min-width: 200px;
+    min-height: 200px;
+    border: 3px solid #42dca3;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.presentations-section {
+    width: 100%;
+    padding: 80px 0;
+}
+
+
+.companies a {
+    width: 25%;
+    max-width: 200px;
+    min-width: 50px;
+    min-height: 50px;
+    max-height: 80px;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    .companies a img {
+        width: 25%;
+        max-width: 200px;
+        min-width: 50px;
+        height: 100%;
+    }
+
+.heading-title {
+    text-transform: none;
+    font-weight: normal;
+    color: #E8353D;
+}
+
+.sc-about img {
+    width: 20%;
+}
+
+
+/* brand logo image */
+
+.fa-bars {
+    color: #fff;
+}
+
+/***********  menu  ******************/
+.menu li a, .brand-heading, .intro-text{
+    color: #fff;
+}
+
+.col-md-offset-2 h1, .col-md-offset-2 p, .col-md-offset-2 a{
+	position: relative;
+    z-index: 25;
+    color: #3c3c3c;
+    font-weight: bold;
+}
+
+a.page-scroll.menu-item{
+	color: #3f3f3f;
+    font-weight: bold;
+}
+
+
+a.page-scroll.menu-item:hover{
+	color: rgba(63,63,63,0.5);
+    background-color: transparent;
+}
+
+
+
+

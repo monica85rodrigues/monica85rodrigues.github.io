@@ -1,2 +1,1 @@
-# mrodrigues.github.io
-Personal site test
+My personal website on www.fullhand.pt
