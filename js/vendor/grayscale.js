@@ -11,12 +11,12 @@ $(window).scroll(function () {
         if ($(".navbar").offset().top > 50) {
             $(".navbar-fixed-top").addClass("top-nav-collapse");
 			$("a.page-scroll.menu-item").css("color","#fff");
-			$("#fullhandLogo").attr("src","images/logos/logo-fullhand-white-50.png");
+			$("#fullhandLogo").attr("src","images/logos/logo-monica-white-50.png");
 			
         } else {
             $(".navbar-fixed-top").removeClass("top-nav-collapse");
 			$("a.page-scroll.menu-item").css("color","#3c3c3c");
-			$("#fullhandLogo").attr("src","images/logos/logo-fullhand-black-50.png");
+			$("#fullhandLogo").attr("src","images/logos/logo-monica-black-50.png");
         }
     }
 });
