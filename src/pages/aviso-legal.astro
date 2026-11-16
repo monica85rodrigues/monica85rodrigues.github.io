@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE, AVISO_LEGAL_COMPLETO } from '../config.js';
+const t = SITE.titular;
+---
+<Base
+  title="Aviso legal"
+  description="Identificação do titular do site monicarodrigues.pt."
+  path="/aviso-legal/"
+  noindex={!AVISO_LEGAL_COMPLETO}
+>
+  <div class="wrap pagina">
+    <div class="texto">
+      <p class="eyebrow">Informação legal</p>
+      <h1>Aviso legal</h1>
+
+      <h2>Titular do site</h2>
+      <ul>
+        <li><strong>Nome:</strong> {t.nomeCompleto ?? 'por preencher'}</li>
+        <li><strong>NIF:</strong> {t.nif ?? 'por preencher'}</li>
+        <li><strong>Morada:</strong> {t.morada ?? 'por preencher'}</li>
+        <li><strong>Email:</strong> {SITE.email ? <a href={`mailto:${SITE.email}`}>{SITE.email}</a> : 'por preencher'}</li>
+      </ul>
+
+      <h2>Propriedade intelectual</h2>
+      <p>
+        Os textos, as imagens e os logótipos deste site pertencem a {SITE.name}, salvo indicação em contrário.
+        Não podem ser copiados nem reutilizados sem autorização.
+      </p>
+
+      <h2>Privacidade</h2>
+      <p>Veja como são tratados os dados na página de <a href="/privacidade/">privacidade e cookies</a>.</p>
+    </div>
+  </div>
+</Base>

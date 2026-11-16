@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Redes from '../components/Redes.astro';
+import { SITE } from '../config.js';
+import foto from '../assets/monica-sobre.jpg';
+---
+<Base
+  title="Sobre: de developer a Engineering Manager"
+  description="O meu percurso de Software Developer a Engineering Manager: o dia em que aceitei liderar, o que foi mais difícil e o que aprendi pelo caminho."
+  path="/sobre/"
+>
+  <div class="wrap sobre">
+    <aside>
+      <figure>
+        <Image
+          src={foto}
+          alt="Retrato de Mónica Rodrigues, de blazer azul-marinho, com a mão no queixo e a olhar para cima, pensativa"
+          widths={[380, 560, 760]}
+          sizes="(min-width: 860px) 380px, calc(100vw - 40px)"
+          format="webp"
+          quality={78}
+          loading="eager"
+        />
+      </figure>
+      <ul class="factos">
+        <li>Líder há quase 10 anos</li>
+        <li>Engineering Manager desde 2019</li>
+        <li>De Software Developer a líder</li>
+      </ul>
+      <div style="margin-top:20px"><Redes /></div>
+    </aside>
+
+    <div class="texto">
+      <p class="eyebrow">Sobre mim</p>
+      <h1>De developer a Engineering Manager</h1>
+      <p>
+        Sou a Mónica, Engineering Manager. Ajudo managers e futuros managers em tecnologia a gerir melhor
+        equipas, tempo e projetos, com ferramentas práticas e a experiência de quem conhece o setor por dentro.
+      </p>
+
+      <h2>Como tudo começou</h2>
+      <p>
+        Era developer e adorava tanto o frontend como o backend, e o desafio de pôr algo a mexer.
+        Um dia, um manager disse-me que eu tinha skills para liderar. Chorei e fiquei nervosa, mas aceitei.
+        Deixou-me confortável para voltar atrás se quisesse, e eu agarrei o desafio.
+      </p>
+      <p>
+        Passei a liderar pessoas mais velhas e com mais experiência do que eu, o que também me deixou nervosa.
+        E a primeira pergunta foi sempre a mesma: «Como começar?»
+      </p>
+
+      <p class="citacao">Descobri uma paixão que não conhecia: ajudar pessoas.</p>
+
+      <h2>O que foi mais difícil</h2>
+      <p>
+        Afastar-me do código, ter conversas difíceis e gerir conflitos. Sim, apareceram conflitos! 🙂
+      </p>
+
+      <h2>O que aprendi</h2>
+      <p>
+        O meu maior erro foi pensar que sabia tudo, e nunca sabemos: há sempre algo a aprender.
+        Não me arrependo dos erros que cometi, porque é com eles que crescemos. Também me ajudou muito
+        o livro <em>The Manager’s Path</em>, que li um pouco tarde mas que me deu umas boas luzes.
+      </p>
+
+      <h2>O que ficou da developer</h2>
+      <p>Ser organizada e gostar de ter as coisas escritas e documentadas.</p>
+
+      <h2>Se estás a pensar em liderar</h2>
+      <p>Arrisca sem medo e pede um mentor.</p>
+
+      <div class="botoes">
+        <a class="btn btn-principal" href={SITE.social.linkedin} rel="me noopener">Fala comigo no LinkedIn</a>
+        <a class="btn btn-secundario" href="/talk-evora/">Ver a talk de Évora</a>
+      </div>
+    </div>
+  </div>
+</Base>

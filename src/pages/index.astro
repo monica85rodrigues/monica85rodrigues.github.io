@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.js';
+import hero from '../assets/monica-hero.jpg';
+---
+<Base
+  title="Mónica Rodrigues | IT Leadership: liderança prática para managers em tecnologia"
+  description="Ajudo managers e futuros managers em tecnologia a gerir melhor equipas, tempo e projetos. Liderança prática, por uma Engineering Manager que conhece o setor por dentro."
+  path="/"
+>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Engineering Manager · IT Leadership</p>
+        <h1>Liderança prática para managers em tecnologia</h1>
+        <p class="sub">
+          Ajudo managers e futuros managers em IT a gerir melhor equipas, tempo e projetos,
+          com a experiência de quem passou de developer a Engineering Manager.
+        </p>
+        <div class="botoes">
+          <a class="btn btn-principal" href="/sobre/">Conhece o meu percurso</a>
+          <a class="btn btn-secundario" href={SITE.social.instagram} rel="me noopener">Segue no Instagram</a>
+        </div>
+      </div>
+      <figure>
+        <Image
+          src={hero}
+          alt="Mónica Rodrigues sentada à secretária, com um portátil e um caderno, a sorrir para a câmara"
+          widths={[420, 640, 860]}
+          sizes="(min-width: 860px) 440px, calc(100vw - 40px)"
+          format="webp"
+          quality={78}
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccao alt">
+    <div class="wrap">
+      <div class="intro">
+        <p class="eyebrow">Sobre o que escrevo e falo</p>
+        <h2>Os desafios reais de um manager em tecnologia</h2>
+        <p>Menos teoria, mais exemplos de quem está no terreno: o que faço, o que correu mal e o que mudei.</p>
+      </div>
+      <ul class="pilares">
+        <li class="pilar pessoas">
+          <h3>Pessoas</h3>
+          <ul>
+            <li>1:1 que realmente ajudam</li>
+            <li>Feedback claro e humano</li>
+            <li>Carreira e desenvolvimento de cada um</li>
+            <li>Motivação, confiança e conflitos</li>
+            <li>Delegar sem microgerir</li>
+          </ul>
+        </li>
+        <li class="pilar entrega">
+          <h3>Entrega</h3>
+          <ul>
+            <li>Gerir as expectativas dos stakeholders</li>
+            <li>Comunicar o estado com clareza</li>
+            <li>Prioridades quando tudo é urgente</li>
+            <li>Equilibrar qualidade técnica e trabalho de negócio</li>
+            <li>Bloqueios e atrasos</li>
+          </ul>
+        </li>
+        <li class="pilar processos">
+          <h3>Processos</h3>
+          <ul>
+            <li>Reuniões com objetivo e agenda</li>
+            <li>Gerir bugs e technical debt sem os deixar para trás</li>
+            <li>Rotinas e planeamento da semana</li>
+            <li>Templates e documentação</li>
+          </ul>
+        </li>
+        <li class="pilar jornada">
+          <h3>Jornada</h3>
+          <ul>
+            <li>De developer a líder</li>
+            <li>Livros que me ajudaram</li>
+            <li>Bastidores da liderança</li>
+            <li>Aprender com os erros</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccao">
+    <div class="wrap">
+      <div class="intro">
+        <p class="eyebrow">Para ler e ver</p>
+        <h2>Onde podes ver o meu trabalho</h2>
+      </div>
+      <div class="cartoes">
+        <article class="cartao">
+          <p class="eyebrow">Talk · GDG Évora</p>
+          <h3>O teu novo par de mãos: AI para engineering managers</h3>
+          <p>A talk que dei em Évora a 14 de novembro de 2026, com a demo e o repositório num só sítio.</p>
+          <a class="btn btn-principal" href="/talk-evora/">Ver a talk</a>
+        </article>
+        <article class="cartao">
+          <p class="eyebrow">Artigos</p>
+          <h3>Escrevo no Medium</h3>
+          <p>Partilho como faço os 1:1, as dailies e como leio e termino um livro, sempre na primeira pessoa.</p>
+          <a class="btn btn-secundario" href={SITE.social.medium} rel="noopener">Ler os artigos</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccao alt">
+    <div class="wrap" style="text-align:center">
+      <h2>Vamos conversar sobre liderança?</h2>
+      <p style="max-width:34em;margin-inline:auto">Segue o que partilho no dia a dia no Instagram e no LinkedIn, e diz-me o que gostavas de ver aqui.</p>
+      <div class="botoes" style="justify-content:center">
+        <a class="btn btn-principal" href={SITE.social.instagram} rel="me noopener">Instagram</a>
+        <a class="btn btn-secundario" href={SITE.social.linkedin} rel="me noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</Base>

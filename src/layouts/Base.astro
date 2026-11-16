@@ -1,0 +1,129 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import { SITE, AVISO_LEGAL_COMPLETO } from '../config.js';
+import Redes from '../components/Redes.astro';
+import iconeAzul from '../assets/icone-azul.png';
+import logoBranco from '../assets/logo-branco.png';
+
+const {
+  title,
+  description = SITE.description,
+  path = '/',
+  image = '/og-default.png',
+  tipo = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(path, SITE.url).href;
+const imagemAbsoluta = new URL(image, SITE.url).href;
+const tituloCompleto = path === '/' ? title : `${title} | ${SITE.name}`;
+const atual = (p) => (Astro.url.pathname === p ? 'page' : undefined);
+
+const pessoa = {
+  '@type': 'Person',
+  '@id': `${SITE.url}/#pessoa`,
+  name: SITE.name,
+  jobTitle: SITE.role,
+  description: SITE.description,
+  url: `${SITE.url}/`,
+  image: new URL('/og-default.png', SITE.url).href,
+  inLanguage: 'pt-PT',
+  knowsAbout: ['Liderança em tecnologia', 'Engineering Management', 'Reuniões 1:1', 'Feedback', 'Gestão de equipas', 'Gestão de tempo'],
+  sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.medium, SITE.social.github],
+};
+const site = {
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#site`,
+  url: `${SITE.url}/`,
+  name: SITE.brand,
+  inLanguage: 'pt-PT',
+  publisher: { '@id': `${SITE.url}/#pessoa` },
+};
+const jsonld = { '@context': 'https://schema.org', '@graph': [site, pessoa] };
+const ano = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloCompleto}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="author" content={SITE.name} />
+    <meta name="theme-color" content="#1f3e6f" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content={tipo} />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:site_name" content={SITE.brand} />
+    <meta property="og:title" content={tituloCompleto} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imagemAbsoluta} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Mónica Rodrigues | IT Leadership" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={tituloCompleto} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imagemAbsoluta} />
+
+    <link rel="preload" href="/fonts/PlayfairDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+  </head>
+  <body>
+    <a class="salto" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="topo">
+      <div class="wrap">
+        <a class="marca" href="/" aria-label="Mónica Rodrigues | IT Leadership, página inicial">
+          <Image src={iconeAzul} alt="" width={44} height={33} loading="eager" />
+          <span>Mónica Rodrigues<small>IT Leadership</small></span>
+        </a>
+        <nav aria-label="Principal">
+          <ul class="nav">
+            <li><a href="/" aria-current={atual('/')}>Início</a></li>
+            <li><a href="/sobre/" aria-current={atual('/sobre/')}>Sobre</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <slot />
+    </main>
+
+    <footer class="rodape">
+      <div class="wrap">
+        <div class="grelha">
+          <div>
+            <Image class="logo" src={logoBranco} alt="Mónica Rodrigues | IT Leadership" width={190} />
+            <p>Liderança prática para managers e futuros managers em tecnologia.</p>
+          </div>
+          <div>
+            <h2>Navegar</h2>
+            <ul>
+              <li><a href="/">Início</a></li>
+              <li><a href="/sobre/">Sobre</a></li>
+              <li><a href="/talk-evora/">Talk de Évora</a></li>
+              <li><a href="/privacidade/">Privacidade e cookies</a></li>
+              {AVISO_LEGAL_COMPLETO && <li><a href="/aviso-legal/">Aviso legal</a></li>}
+            </ul>
+          </div>
+          <div>
+            <h2>Segue-me</h2>
+            <Redes />
+            <p style="margin-top:14px"><a href={SITE.social.medium} rel="noopener">Artigos no Medium</a></p>
+          </div>
+        </div>
+        <p class="fim">© {ano} {SITE.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>

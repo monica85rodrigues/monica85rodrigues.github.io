@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.js';
+const atualizado = '16 de novembro de 2026';
+---
+<Base
+  title="Privacidade e cookies"
+  description="Este site não usa cookies nem recolhe dados pessoais. Saiba como são tratados os dados quando visita monicarodrigues.pt."
+  path="/privacidade/"
+>
+  <div class="wrap pagina">
+    <div class="texto">
+      <p class="eyebrow">Informação legal</p>
+      <h1>Privacidade e cookies</h1>
+      <p><small>Última atualização: {atualizado}</small></p>
+
+      <h2>Quem é a responsável</h2>
+      <p>
+        {SITE.name}, responsável por este site (monicarodrigues.pt).
+        {SITE.email
+          ? <>Contacto: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</>
+          : <>Contacto através do <a href={SITE.social.linkedin} rel="me noopener">LinkedIn</a> ou do <a href={SITE.social.instagram} rel="me noopener">Instagram</a>.</>}
+      </p>
+
+      <h2>Que dados recolho</h2>
+      <p>
+        Nenhum diretamente. Este site não tem formulários, contas de utilizador, comentários nem
+        listas de emails.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Este site <strong>não usa cookies</strong> nem tecnologias semelhantes, e não tem
+        ferramentas de análise nem de publicidade. As fontes de letra estão alojadas no próprio site,
+        por isso o seu browser não faz pedidos ao Google para as carregar. Por esse motivo, não há banner de cookies.
+      </p>
+
+      <h2>Alojamento</h2>
+      <p>
+        O site está alojado no GitHub Pages. Como em qualquer servidor web, o fornecedor pode registar
+        dados técnicos do pedido, como o endereço IP, para fins de segurança e funcionamento. Pode ver como o
+        GitHub trata esses dados na sua
+        <a href="https://docs.github.com/pt/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">declaração de privacidade</a>.
+      </p>
+
+      <h2>Ligações para outros sites</h2>
+      <p>
+        O site tem ligações para o Instagram, o LinkedIn, o Medium e o GitHub. Esses serviços têm as suas
+        próprias políticas de privacidade e de cookies, que se aplicam quando os visita.
+      </p>
+
+      <h2>Os seus direitos</h2>
+      <p>
+        Ao abrigo do RGPD, tem direito de acesso, retificação, apagamento e oposição ao tratamento dos
+        seus dados pessoais. Pode também apresentar reclamação à autoridade de controlo, a
+        <a href="https://www.cnpd.pt" rel="noopener">Comissão Nacional de Proteção de Dados (CNPD)</a>.
+      </p>
+
+      <h2>Alterações</h2>
+      <p>
+        Se um dia o site passar a recolher dados (por exemplo, um formulário de subscrição) ou a usar
+        cookies, esta página será atualizada antes disso.
+      </p>
+    </div>
+  </div>
+</Base>
