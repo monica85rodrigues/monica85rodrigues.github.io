@@ -86,25 +86,69 @@ html:not(.js) .topo nav { width: 100%; }
 .btn-secundario { background: transparent; color: var(--azul); }
 .btn-secundario:hover { background: var(--azul); color: #fff; }
 
-/* Hero */
-.hero { padding: 48px 0 64px; }
-.hero .wrap { display: grid; gap: 36px; align-items: center; }
-.hero p.sub { font-size: 1.2rem; max-width: 36em; color: var(--tinta); }
-.hero figure { margin: 0; position: relative; }
-.hero figure img { border-radius: 24px; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 62%; }
-.hero figure::before { content: ""; position: absolute; inset: 18px -14px -14px 18px; background: var(--rosa); border-radius: 24px; z-index: -1; }
+/* Hero (azul) */
+.hero { background: var(--azul); color: #fff; padding: 48px 0 72px; position: relative; overflow: hidden; }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+.hero::before { width: 520px; height: 520px; right: -160px; top: -200px; background: rgba(255,255,255,.06); }
+.hero::after { width: 360px; height: 360px; left: -140px; bottom: -180px; background: rgba(214,183,182,.14); }
+.hero .wrap { display: grid; gap: 40px; align-items: center; position: relative; z-index: 1; }
+.hero h1 { color: #fff; }
+.hero .eyebrow { color: var(--rosa); }
+.hero p.sub { font-size: 1.2rem; max-width: 36em; color: #fff; }
+.hero figure { margin: 0; position: relative; max-width: 420px; justify-self: center; width: 100%; }
+.hero figure img { border-radius: 200px 200px 28px 28px; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; box-shadow: 0 24px 50px rgba(0,0,0,.28); }
+.hero figure::before { content: ""; position: absolute; inset: 16px -14px -14px 16px; border: 2px solid var(--rosa); border-radius: 200px 200px 28px 28px; z-index: -1; }
 @media (min-width: 860px) {
-  .hero { padding: 72px 0 96px; }
+  .hero { padding: 88px 0 104px; }
   .hero .wrap { grid-template-columns: 1.15fr .85fr; gap: 64px; }
 }
+.btn-rosa { background: var(--rosa); color: var(--azul-escuro); border-color: var(--rosa); }
+.btn-rosa:hover { background: #fff; border-color: #fff; color: var(--azul-escuro); }
+.btn-branco { background: transparent; color: #fff; border-color: #fff; }
+.btn-branco:hover { background: #fff; color: var(--azul); }
 
-/* Faixa de credenciais (home) */
-.credenciais { background: var(--azul); color: #fff; padding: 22px 0; }
-.credenciais ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.credenciais li { font-weight: 600; display: flex; align-items: center; gap: 10px; }
-.credenciais li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--rosa); flex: none; }
-.credenciais a { color: #fff; }
-@media (min-width: 760px) { .credenciais ul { grid-template-columns: repeat(3, auto); justify-content: space-between; } }
+/* Números (home) */
+.numeros { padding: 52px 0 12px; }
+.numeros ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; text-align: center; }
+.numeros li { display: grid; gap: 2px; }
+.numeros strong { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; color: var(--azul); }
+.numeros span { font-weight: 600; color: var(--suave); font-size: 1rem; }
+.numeros .mais { text-align: center; margin: 26px 0 0; }
+@media (min-width: 760px) { .numeros ul { grid-template-columns: repeat(3, 1fr); } .numeros li + li { border-left: 2px solid var(--rosa); } }
+
+/* Bastidores (fotos) */
+.fotos3 { display: grid; gap: 16px; }
+.fotos3 figure { margin: 0; }
+.fotos3 img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
+.fotos3 figure:nth-child(1) img { object-position: 80% 50%; }
+.fotos3 figure:nth-child(3) img { object-position: 78% 50%; }
+@media (min-width: 760px) {
+  .fotos3 { grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+  .fotos3 figure:nth-child(2) { margin-top: 36px; }
+}
+
+/* Destaque (talk, azul) */
+.seccao.destaque { background: var(--azul); color: #fff; position: relative; overflow: hidden; }
+.seccao.destaque::before { content: ""; position: absolute; width: 480px; height: 480px; border-radius: 50%; background: rgba(255,255,255,.05); right: -140px; bottom: -220px; }
+.destaque h2 { color: #fff; }
+.destaque .eyebrow { color: var(--rosa); }
+.destaque-grelha { display: grid; gap: 32px; align-items: center; position: relative; }
+.destaque-grelha figure { margin: 0; max-width: 300px; }
+.destaque-grelha img { border-radius: 24px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+@media (min-width: 860px) { .destaque-grelha { grid-template-columns: 300px 1fr; gap: 64px; } }
+
+/* Chamada final (rosa) */
+.cta-final { background: var(--rosa); padding: 64px 0; }
+.cta-final .wrap { display: grid; gap: 28px; align-items: center; }
+.cta-final figure { margin: 0; max-width: 300px; }
+.cta-final img { border-radius: 24px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+@media (min-width: 860px) { .cta-final .wrap { grid-template-columns: 300px 1fr; gap: 64px; } }
+
+/* Aparecer ao fazer scroll (só com JavaScript e sem preferência por menos movimento) */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+  .js [data-reveal].visto { opacity: 1; transform: none; }
+}
 
 /* Secções */
 .seccao { padding: 64px 0; }
@@ -114,7 +158,9 @@ html:not(.js) .topo nav { width: 100%; }
 /* Pilares */
 .pilares { display: grid; gap: 18px; grid-template-columns: 1fr; margin: 0; padding: 0; list-style: none; }
 @media (min-width: 720px) { .pilares { grid-template-columns: repeat(2, 1fr); } }
-.pilar { padding: 28px; border-radius: 20px; }
+.pilar { padding: 32px 28px 28px; border-radius: 24px; position: relative; overflow: hidden; transition: transform .2s; }
+.pilar:hover { transform: translateY(-4px); }
+.pilar .num { position: absolute; right: 18px; top: 6px; font-family: var(--serif); font-weight: 700; font-size: 4.2rem; line-height: 1; opacity: .22; }
 .pilar h3 { margin-bottom: .6em; }
 .pilar ul { margin: 0; padding-left: 1.2em; }
 .pilar li { margin-bottom: .35em; }
@@ -191,4 +237,4 @@ html:not(.js) .topo nav { width: 100%; }
 .pagina .texto ul.lista-talks { padding-left: 0; }
 .pagina section h2 { margin-top: 1.8em; }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .pilar { transition: none; } }

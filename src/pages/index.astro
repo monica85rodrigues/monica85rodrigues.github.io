@@ -2,7 +2,12 @@
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config.js';
-import hero from '../assets/monica-hero.jpg';
+import hero from '../assets/foto-68.jpg';
+import bastidores1 from '../assets/foto-14.jpg';
+import bastidores2 from '../assets/foto-41.jpg';
+import bastidores3 from '../assets/foto-47.jpg';
+import talkFoto from '../assets/foto-73.jpg';
+import ctaFoto from '../assets/foto-125.jpg';
 ---
 <Base
   title="Mónica Rodrigues | IT Leadership: liderança prática para managers em tecnologia"
@@ -11,7 +16,7 @@ import hero from '../assets/monica-hero.jpg';
 >
   <section class="hero">
     <div class="wrap">
-      <div>
+      <div class="hero-texto">
         <p class="eyebrow">Engineering Manager · IT Leadership</p>
         <h1>Liderança prática para managers em tecnologia</h1>
         <p class="sub">
@@ -19,18 +24,18 @@ import hero from '../assets/monica-hero.jpg';
           com a experiência de quem passou de developer a Engineering Manager.
         </p>
         <div class="botoes">
-          <a class="btn btn-principal" href="/sobre/">Conhece o meu percurso</a>
-          <a class="btn btn-secundario" href={SITE.social.instagram} rel="me noopener">Segue no Instagram</a>
+          <a class="btn btn-rosa" href="/sobre/">Conhece o meu percurso</a>
+          <a class="btn btn-branco" href={SITE.social.instagram} rel="me noopener">Segue no Instagram</a>
         </div>
       </div>
       <figure>
         <Image
           src={hero}
-          alt="Mónica Rodrigues sentada à secretária, com um portátil e um caderno, a sorrir para a câmara"
+          alt="Mónica Rodrigues a sorrir, de blazer azul, com a mão ao rosto"
           widths={[420, 640, 860]}
           sizes="(min-width: 860px) 440px, calc(100vw - 40px)"
           format="webp"
-          quality={78}
+          quality={80}
           loading="eager"
           fetchpriority="high"
         />
@@ -38,13 +43,14 @@ import hero from '../assets/monica-hero.jpg';
     </div>
   </section>
 
-  <section class="credenciais" aria-label="Percurso">
+  <section class="numeros" aria-label="Percurso">
     <div class="wrap">
       <ul>
-        <li>Engineering Manager desde 2019</li>
-        <li>Reconhecida como MVP pela Microsoft</li>
-        <li>Ex-embaixadora das Geek Girls Portugal · <a href="/sobre/#comunidade">ver mais</a></li>
+        <li data-reveal><strong>Quase 10</strong><span>anos a liderar equipas</span></li>
+        <li data-reveal><strong>2019</strong><span>Engineering Manager desde</span></li>
+        <li data-reveal><strong>MVP</strong><span>reconhecida pela Microsoft</span></li>
       </ul>
+      <p class="mais">Ex-embaixadora das Geek Girls Portugal · <a href="/sobre/#comunidade">ver comunidade e reconhecimento</a></p>
     </div>
   </section>
 
@@ -56,7 +62,8 @@ import hero from '../assets/monica-hero.jpg';
         <p>Menos teoria, mais exemplos de quem está no terreno: o que faço, o que correu mal e o que mudei.</p>
       </div>
       <ul class="pilares">
-        <li class="pilar pessoas">
+        <li class="pilar pessoas" data-reveal>
+          <span class="num" aria-hidden="true">01</span>
           <h3>Pessoas</h3>
           <ul>
             <li>1:1 que realmente ajudam</li>
@@ -66,7 +73,8 @@ import hero from '../assets/monica-hero.jpg';
             <li>Delegar sem microgerir</li>
           </ul>
         </li>
-        <li class="pilar entrega">
+        <li class="pilar entrega" data-reveal>
+          <span class="num" aria-hidden="true">02</span>
           <h3>Entrega</h3>
           <ul>
             <li>Gerir as expectativas dos stakeholders</li>
@@ -76,7 +84,8 @@ import hero from '../assets/monica-hero.jpg';
             <li>Bloqueios e atrasos</li>
           </ul>
         </li>
-        <li class="pilar processos">
+        <li class="pilar processos" data-reveal>
+          <span class="num" aria-hidden="true">03</span>
           <h3>Processos</h3>
           <ul>
             <li>Reuniões com objetivo e agenda</li>
@@ -85,7 +94,8 @@ import hero from '../assets/monica-hero.jpg';
             <li>Templates e documentação</li>
           </ul>
         </li>
-        <li class="pilar jornada">
+        <li class="pilar jornada" data-reveal>
+          <span class="num" aria-hidden="true">04</span>
           <h3>Jornada</h3>
           <ul>
             <li>De developer a líder</li>
@@ -98,37 +108,67 @@ import hero from '../assets/monica-hero.jpg';
     </div>
   </section>
 
-  <section class="seccao">
+  <section class="seccao bastidores">
     <div class="wrap">
       <div class="intro">
-        <p class="eyebrow">Para ler e ver</p>
-        <h2>Onde podes ver o meu trabalho</h2>
+        <p class="eyebrow">Bastidores</p>
+        <h2>Livros, post-its e rotinas</h2>
+        <p>O que está por trás do que partilho: o que uso, o que leio e como organizo o meu dia a dia.</p>
       </div>
-      <div class="cartoes">
-        <article class="cartao">
+      <div class="fotos3">
+        <figure data-reveal><Image src={bastidores1} alt="Mónica a escrever em post-its numa parede" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+        <figure data-reveal><Image src={bastidores2} alt="Mónica a sorrir com uma pilha de livros de liderança" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+        <figure data-reveal><Image src={bastidores3} alt="Mónica à secretária, a escrever, com o portátil e um microfone" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccao destaque">
+    <div class="wrap">
+      <div class="destaque-grelha">
+        <figure data-reveal><Image src={talkFoto} alt="Mónica a apontar, com um sorriso" widths={[320, 520]} sizes="(min-width: 860px) 320px, 70vw" format="webp" quality={78} /></figure>
+        <div data-reveal>
           <p class="eyebrow">Talk · GDG Évora</p>
-          <h3>O teu novo par de mãos: AI para engineering managers</h3>
+          <h2>O teu novo par de mãos: AI para engineering managers</h2>
           <p>A talk que dei em Évora a 14 de novembro de 2026, com a demo e o repositório num só sítio.</p>
-          <a class="btn btn-principal" href="/talk-evora/">Ver a talk</a>
-        </article>
-        <article class="cartao">
+          <div class="botoes">
+            <a class="btn btn-rosa" href="/talk-evora/">Ver a talk</a>
+            <a class="btn btn-branco" href="/talks/">Todas as talks</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccao">
+    <div class="wrap">
+      <div class="cartoes">
+        <article class="cartao" data-reveal>
           <p class="eyebrow">Artigos</p>
           <h3>Escrevo no Medium</h3>
           <p>Partilho como faço os 1:1, as dailies e como leio e termino um livro, sempre na primeira pessoa.</p>
           <a class="btn btn-secundario" href="/artigos/">Ver os artigos</a>
         </article>
+        <article class="cartao" data-reveal>
+          <p class="eyebrow">Sobre mim</p>
+          <h3>De developer a líder</h3>
+          <p>O meu percurso, o que aprendi pelo caminho e o que me move fora do trabalho.</p>
+          <a class="btn btn-secundario" href="/sobre/">Conhece o meu percurso</a>
+        </article>
       </div>
-      <p style="margin-top:22px"><a href="/talks/"><strong>Ver todas as talks e apresentações</strong></a></p>
     </div>
   </section>
 
-  <section class="seccao alt">
-    <div class="wrap" style="text-align:center">
-      <h2>Vamos conversar sobre liderança?</h2>
-      <p style="max-width:34em;margin-inline:auto">Segue o que partilho no dia a dia no Instagram e no LinkedIn, e diz-me o que gostavas de ver aqui.</p>
-      <div class="botoes" style="justify-content:center">
-        <a class="btn btn-principal" href={SITE.social.instagram} rel="me noopener">Instagram</a>
-        <a class="btn btn-secundario" href={SITE.social.linkedin} rel="me noopener">LinkedIn</a>
+  <section class="cta-final">
+    <div class="wrap">
+      <figure data-reveal><Image src={ctaFoto} alt="Mónica sentada num pufe, a ler, rodeada de livros" widths={[320, 520]} sizes="(min-width: 860px) 300px, 60vw" format="webp" quality={76} /></figure>
+      <div data-reveal>
+        <h2>Vamos conversar sobre liderança?</h2>
+        <p>Segue o que partilho no dia a dia no Instagram e no LinkedIn, e diz-me o que gostavas de ver aqui.</p>
+        <div class="botoes">
+          <a class="btn btn-principal" href={SITE.social.instagram} rel="me noopener">Instagram</a>
+          <a class="btn btn-secundario" href={SITE.social.linkedin} rel="me noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </section>
