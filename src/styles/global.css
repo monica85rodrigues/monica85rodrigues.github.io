@@ -57,11 +57,16 @@ p { margin: 0 0 1.1em; }
 .nav a { font-weight: 600; text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--azul); }
 
+@media (max-width: 600px) {
+  .topo { position: static; }
+  .topo .wrap { flex-wrap: wrap; row-gap: 6px; padding: 12px 0 10px; }
+  .topo nav { width: 100%; }
+  .nav { justify-content: space-between; gap: 12px; }
+}
 @media (max-width: 480px) {
   .topo .wrap { gap: 8px; }
   .marca { font-size: 1.02rem; gap: 8px; }
   .marca span { white-space: nowrap; }
-  .marca img { display: none; }
   .nav { gap: 14px; }
 }
 
@@ -143,6 +148,8 @@ p { margin: 0 0 1.1em; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 14px 0 0; }
 .chips li { background: #fff; border: 2px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 8px 18px; font-weight: 600; }
 
+.aviso { background: var(--bege); border-radius: 14px; padding: 14px 18px; max-width: 38em; }
+
 /* Lista de talks */
 .lista-talks { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
 .lista-talks a { display: grid; gap: 2px; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 16px 20px; text-decoration: none; color: var(--tinta); }
@@ -174,5 +181,6 @@ p { margin: 0 0 1.1em; }
 .pagina .texto h2 { font-size: 1.5rem; }
 .pagina .texto ul { padding-left: 1.2em; }
 .pagina .texto ul.lista-talks { padding-left: 0; }
+.pagina section h2 { margin-top: 1.8em; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }

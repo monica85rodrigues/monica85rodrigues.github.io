@@ -18,7 +18,7 @@ export const SITE = {
   social: {
     instagram: 'https://www.instagram.com/monicarodrigues.itleadership/',
     linkedin: 'https://www.linkedin.com/in/monicascrodrigues/',
-    medium: 'https://medium.com/@monica85rodrigues',
+    medium: 'https://monica85rodrigues.medium.com/',
     github: 'https://github.com/monica85rodrigues',
   },
 };
