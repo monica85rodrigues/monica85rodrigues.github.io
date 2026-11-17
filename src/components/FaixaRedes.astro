@@ -1,0 +1,22 @@
+---
+import { SITE } from '../config.js';
+const itens = [
+  { texto: 'Segue-me no Instagram', url: SITE.social.instagram },
+  { texto: 'Liga-te comigo no LinkedIn', url: SITE.social.linkedin },
+  { texto: 'Lê os meus artigos no Medium', url: SITE.social.medium },
+];
+---
+<section class="faixa-redes" aria-label="Segue-me nas redes sociais">
+  <div class="faixa-pista">
+    {[0, 1].map((copia) => (
+      <ul class="faixa-grupo" aria-hidden={copia === 1 ? 'true' : undefined}>
+        {itens.map((i) => (
+          <li>
+            <a href={i.url} rel="me noopener" tabindex={copia === 1 ? -1 : undefined}>{i.texto}</a>
+            <span class="faixa-sep" aria-hidden="true">✦</span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</section>

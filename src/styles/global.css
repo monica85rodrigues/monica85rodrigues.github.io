@@ -288,3 +288,20 @@ html:not(.js) .topo nav { width: 100%; }
 .pagina section h2 { margin-top: 1.8em; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .pilar, .cartao, .lista-talks a, .nav a::after { transition: none; } .barras, .barras::before, .barras::after, .js .menu, .js .menu li { transition: none !important; } }
+
+/* Faixa a deslizar: segue-me nas redes */
+.faixa-redes { background: #fff; overflow: hidden; padding: 16px 0; border-top: 1px solid var(--linha); }
+.faixa-pista { display: flex; width: max-content; animation: faixa-andar 32s linear infinite; }
+.faixa-redes:hover .faixa-pista, .faixa-redes:focus-within .faixa-pista { animation-play-state: paused; }
+.faixa-grupo { display: flex; flex-shrink: 0; list-style: none; margin: 0; padding: 0; }
+.faixa-grupo li { display: flex; align-items: center; }
+.faixa-grupo a { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; color: var(--azul); text-decoration: none; white-space: nowrap; padding: 2px 6px; }
+.faixa-grupo a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.faixa-sep { color: var(--azul); font-size: 1.1rem; margin: 0 26px; }
+@keyframes faixa-andar { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .faixa-pista { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
+  .faixa-grupo[aria-hidden="true"] { display: none; }
+  .faixa-grupo { flex-wrap: wrap; justify-content: center; row-gap: 6px; }
+  .faixa-grupo li:last-child .faixa-sep { display: none; }
+}

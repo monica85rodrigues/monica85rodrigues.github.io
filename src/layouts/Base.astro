@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import { SITE, AVISO_LEGAL_COMPLETO } from '../config.js';
+import FaixaRedes from '../components/FaixaRedes.astro';
 import Redes from '../components/Redes.astro';
 import iconeAzul from '../assets/icone-azul.png';
 import logoBranco from '../assets/logo-branco.png';
@@ -104,6 +105,7 @@ const ano = new Date().getFullYear();
 
     <main id="conteudo">
       <slot />
+      <FaixaRedes />
     </main>
 
     <footer class="rodape">
