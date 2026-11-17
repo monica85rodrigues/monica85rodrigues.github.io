@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CabecalhoPagina from '../components/CabecalhoPagina.astro';
 import { SITE, AVISO_LEGAL_COMPLETO } from '../config.js';
 const t = SITE.titular;
 ---
@@ -9,10 +10,9 @@ const t = SITE.titular;
   path="/aviso-legal/"
   noindex={!AVISO_LEGAL_COMPLETO}
 >
+  <CabecalhoPagina eyebrow="Informação legal" titulo="Aviso legal" />
   <div class="wrap pagina">
     <div class="texto">
-      <p class="eyebrow">Informação legal</p>
-      <h1>Aviso legal</h1>
 
       <h2>Titular do site</h2>
       <ul>

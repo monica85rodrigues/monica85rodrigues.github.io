@@ -4,103 +4,143 @@ import Base from '../layouts/Base.astro';
 import Redes from '../components/Redes.astro';
 import { SITE } from '../config.js';
 import foto from '../assets/monica-sobre.jpg';
+import foraFoto from '../assets/foto-128.jpg';
 ---
 <Base
   title="Sobre: de developer a Engineering Manager"
   description="O meu percurso de Software Developer a Engineering Manager: o dia em que aceitei liderar, o que aprendi, a minha ligação às comunidades Geek Girls Portugal e NetPonto e o reconhecimento como MVP da Microsoft."
   path="/sobre/"
 >
-  <div class="wrap sobre">
-    <aside>
+  <section class="sobre-hero">
+    <div class="wrap">
+      <div class="sobre-hero-texto">
+        <p class="eyebrow">Sobre mim</p>
+        <h1>De developer a Engineering Manager</h1>
+        <p class="sub">
+          Sou a Mónica, Engineering Manager. Ajudo managers e futuros managers em tecnologia a gerir melhor
+          equipas, tempo e projetos, com ferramentas práticas e a experiência de quem conhece o setor por dentro.
+        </p>
+        <ul class="pilulas">
+          <li>Líder há quase 10 anos</li>
+          <li>Engineering Manager desde 2019</li>
+          <li>De Software Developer a líder</li>
+        </ul>
+        <div class="redes-hero"><Redes /></div>
+      </div>
       <figure>
         <Image
           src={foto}
           alt="Retrato de Mónica Rodrigues, de blazer azul-marinho, com a mão no queixo e a olhar para cima, pensativa"
           widths={[380, 560, 760]}
-          sizes="(min-width: 860px) 380px, calc(100vw - 40px)"
+          sizes="(min-width: 860px) 420px, calc(100vw - 40px)"
           format="webp"
           quality={78}
           loading="eager"
         />
       </figure>
-      <ul class="factos">
-        <li>Líder há quase 10 anos</li>
-        <li>Engineering Manager desde 2019</li>
-        <li>De Software Developer a líder</li>
-      </ul>
-      <div style="margin-top:20px"><Redes /></div>
-    </aside>
+    </div>
+  </section>
 
-    <div class="texto">
-      <p class="eyebrow">Sobre mim</p>
-      <h1>De developer a Engineering Manager</h1>
-      <p>
-        Sou a Mónica, Engineering Manager. Ajudo managers e futuros managers em tecnologia a gerir melhor
-        equipas, tempo e projetos, com ferramentas práticas e a experiência de quem conhece o setor por dentro.
-      </p>
+  <section class="seccao">
+    <div class="wrap">
+      <div class="inicio" data-reveal>
+        <p class="eyebrow">01 · Como tudo começou</p>
+        <h2>Aceitei o desafio, mesmo nervosa</h2>
+        <p>
+          Era developer e adorava tanto o frontend como o backend, e o desafio de pôr algo a mexer.
+          Um dia, um manager disse-me que eu tinha skills para liderar. Chorei e fiquei nervosa, mas aceitei.
+          Deixou-me confortável para voltar atrás se quisesse, e eu agarrei o desafio.
+        </p>
+        <p>
+          Passei a liderar pessoas mais velhas e com mais experiência do que eu, o que também me deixou nervosa.
+          E a primeira pergunta foi sempre a mesma: «Como começar?»
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <h2>Como tudo começou</h2>
-      <p>
-        Era developer e adorava tanto o frontend como o backend, e o desafio de pôr algo a mexer.
-        Um dia, um manager disse-me que eu tinha skills para liderar. Chorei e fiquei nervosa, mas aceitei.
-        Deixou-me confortável para voltar atrás se quisesse, e eu agarrei o desafio.
-      </p>
-      <p>
-        Passei a liderar pessoas mais velhas e com mais experiência do que eu, o que também me deixou nervosa.
-        E a primeira pergunta foi sempre a mesma: «Como começar?»
-      </p>
+  <section class="faixa-citacao">
+    <div class="wrap" data-reveal>
+      <p>Descobri uma paixão que não conhecia: ajudar pessoas.</p>
+    </div>
+  </section>
 
-      <p class="citacao">Descobri uma paixão que não conhecia: ajudar pessoas.</p>
+  <section class="seccao">
+    <div class="wrap">
+      <div class="blocos">
+        <article class="bloco" data-reveal>
+          <p class="eyebrow">02 · O que foi mais difícil</p>
+          <p>Afastar-me do código, ter conversas difíceis e gerir conflitos. Sim, apareceram conflitos! 🙂</p>
+        </article>
+        <article class="bloco" data-reveal>
+          <p class="eyebrow">03 · O que aprendi</p>
+          <p>
+            O meu maior erro foi pensar que sabia tudo, e nunca sabemos: há sempre algo a aprender.
+            Não me arrependo dos erros que cometi, porque é com eles que crescemos. Também me ajudou muito
+            o livro <em>The Manager’s Path</em>, que li um pouco tarde mas que me deu umas boas luzes.
+          </p>
+        </article>
+        <article class="bloco" data-reveal>
+          <p class="eyebrow">04 · O que ficou da developer</p>
+          <p>Ser organizada e gostar de ter as coisas escritas e documentadas.</p>
+        </article>
+        <article class="bloco bloco-azul" data-reveal>
+          <p class="eyebrow">05 · Se estás a pensar em liderar</p>
+          <p>Arrisca sem medo e pede um mentor.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <h2>O que foi mais difícil</h2>
-      <p>
-        Afastar-me do código, ter conversas difíceis e gerir conflitos. Sim, apareceram conflitos! 🙂
-      </p>
-
-      <h2>O que aprendi</h2>
-      <p>
-        O meu maior erro foi pensar que sabia tudo, e nunca sabemos: há sempre algo a aprender.
-        Não me arrependo dos erros que cometi, porque é com eles que crescemos. Também me ajudou muito
-        o livro <em>The Manager’s Path</em>, que li um pouco tarde mas que me deu umas boas luzes.
-      </p>
-
-      <h2>O que ficou da developer</h2>
-      <p>Ser organizada e gostar de ter as coisas escritas e documentadas.</p>
-
-      <h2>Se estás a pensar em liderar</h2>
-      <p>Arrisca sem medo e pede um mentor.</p>
-
-      <h2 id="comunidade">Comunidade e reconhecimento</h2>
-      <p>O meu envolvimento no passado em comunidades de tecnologia.</p>
+  <section class="seccao alt" id="comunidade">
+    <div class="wrap">
+      <div class="intro">
+        <p class="eyebrow">Comunidade e reconhecimento</p>
+        <h2>O meu envolvimento no passado em comunidades de tecnologia</h2>
+      </div>
       <div class="comunidade">
-        <article>
+        <article data-reveal>
           <h3>Geek Girls Portugal</h3>
           <p>Fui embaixadora das Geek Girls Portugal.</p>
         </article>
-        <article>
+        <article data-reveal>
           <h3>NetPonto</h3>
           <p>Ajudei a organizar eventos para a NetPonto, uma organização que existia na altura.</p>
         </article>
-        <article>
+        <article data-reveal>
           <h3>MVP da Microsoft</h3>
           <p>Nos meus tempos geeks, fui reconhecida como MVP pela Microsoft.</p>
         </article>
       </div>
+    </div>
+  </section>
 
-      <h2>Fora do trabalho</h2>
-      <p>Nos tempos livres gosto de:</p>
-      <ul class="chips">
-        <li>Ler livros</li>
-        <li>Fazer Legos</li>
-        <li>Viajar pelo mundo</li>
-        <li>Experimentar restaurantes</li>
-        <li>Conviver com as pessoas</li>
-      </ul>
+  <section class="seccao">
+    <div class="wrap fora">
+      <figure data-reveal>
+        <Image src={foraFoto} alt="Mónica sentada num pufe, a sorrir, com uma pilha de livros" widths={[320, 520]} sizes="(min-width: 860px) 340px, 70vw" format="webp" quality={78} />
+      </figure>
+      <div data-reveal>
+        <p class="eyebrow">Fora do trabalho</p>
+        <h2>Nos tempos livres gosto de</h2>
+        <ul class="chips">
+          <li>Ler livros</li>
+          <li>Fazer Legos</li>
+          <li>Viajar pelo mundo</li>
+          <li>Experimentar restaurantes</li>
+          <li>Conviver com as pessoas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-      <div class="botoes">
+  <section class="cta-azul">
+    <div class="wrap" data-reveal>
+      <h2>Vamos falar?</h2>
+      <div class="botoes" style="justify-content:center">
         <a class="btn btn-principal" href={SITE.social.linkedin} rel="me noopener">Fala comigo no LinkedIn</a>
         <a class="btn btn-secundario" href="/talk-evora/">Ver a talk de Évora</a>
       </div>
     </div>
-  </div>
+  </section>
 </Base>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CabecalhoPagina from '../components/CabecalhoPagina.astro';
 import { SITE } from '../config.js';
 import { PILARES_ARTIGOS } from '../data/artigos.js';
 
@@ -11,25 +12,25 @@ const formatar = (iso) =>
   description="Artigos de Mónica Rodrigues sobre o dia a dia de uma Engineering Manager: 1:1, dailies, organização do trabalho, decisões, equipas e a transição de developer para líder."
   path="/artigos/"
 >
+  <CabecalhoPagina eyebrow="Artigos" titulo="O que escrevo">
+    <p>
+      Escrevo no Medium sobre o que vivo como Engineering Manager, sempre na primeira pessoa:
+      o que faço, o que mudei e o que aprendi.
+    </p>
+  </CabecalhoPagina>
   <div class="wrap pagina">
     <div class="texto" style="max-width:none">
-      <p class="eyebrow">Artigos</p>
-      <h1>O que escrevo</h1>
-      <p style="max-width:38em">
-        Escrevo no Medium sobre o que vivo como Engineering Manager, sempre na primeira pessoa:
-        o que faço, o que mudei e o que aprendi.
-      </p>
       <p class="aviso">
         <strong>Antes de leres:</strong> são artigos antigos e estão em inglês. Algumas práticas já mudaram.
         Por exemplo, hoje faço os 1:1 de 15 em 15 dias, e no artigo eram mensais.
       </p>
 
       {PILARES_ARTIGOS.map((p) => (
-        <section>
-          <h2 id={p.id}>{p.nome}</h2>
+        <section class={`sec-art ${p.id}`}>
+          <h2 id={p.id} class="titulo-sec">{p.nome}</h2>
           <ul class="lista-talks">
             {p.artigos.map((a) => (
-              <li>
+              <li data-reveal>
                 <a href={a.url} rel="noopener">
                   <span class="data">Artigo em inglês · Medium{a.data ? ` · ${formatar(a.data)}` : ''}</span>
                   <span class="titulo">{a.titulo}</span>

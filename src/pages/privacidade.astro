@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CabecalhoPagina from '../components/CabecalhoPagina.astro';
 import { SITE } from '../config.js';
 const atualizado = '16 de novembro de 2026';
 ---
@@ -8,11 +9,11 @@ const atualizado = '16 de novembro de 2026';
   description="Este site não usa cookies nem recolhe dados pessoais. Saiba como são tratados os dados quando visita monicarodrigues.pt."
   path="/privacidade/"
 >
+  <CabecalhoPagina eyebrow="Informação legal" titulo="Privacidade e cookies">
+    <p>Última atualização: {atualizado}</p>
+  </CabecalhoPagina>
   <div class="wrap pagina">
     <div class="texto">
-      <p class="eyebrow">Informação legal</p>
-      <h1>Privacidade e cookies</h1>
-      <p><small>Última atualização: {atualizado}</small></p>
 
       <h2>Quem é a responsável</h2>
       <p>
