@@ -54,8 +54,9 @@ p { margin: 0 0 1.1em; }
 .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--azul); font-family: var(--serif); font-weight: 600; font-size: 1.2rem; line-height: 1.1; }
 .marca small { display: block; font-family: var(--sans); font-size: .72rem; letter-spacing: .16em; font-weight: 600; text-transform: uppercase; }
 .nav { display: flex; align-items: center; gap: 22px; list-style: none; margin: 0; padding: 0; }
-.nav a { font-weight: 600; text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
-.nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--azul); }
+.nav a { font-weight: 600; text-decoration: none; padding: 6px 2px; position: relative; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--azul); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+.nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
 
 /* Menu: numa linha no computador; botão "Menu" que abre e fecha no telemóvel */
 .menu-btn { display: none; }
@@ -66,15 +67,25 @@ html:not(.js) .topo nav { width: 100%; }
   .marca span { white-space: nowrap; }
   .js .menu-btn { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border: 2px solid var(--azul); border-radius: 999px; background: transparent; color: var(--azul); font: 600 1rem var(--sans); cursor: pointer; }
   .js .menu-btn[aria-expanded="true"] { background: var(--azul); color: #fff; }
-  .barras, .barras::before, .barras::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; }
+  .barras, .barras::before, .barras::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; transition: transform .3s ease, background-color .2s, top .3s ease; }
   .barras::before, .barras::after { content: ""; position: absolute; left: 0; }
   .barras::before { top: -6px; }
   .barras::after { top: 6px; }
-  .js .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linha); box-shadow: 0 14px 24px rgba(31, 62, 111, .12); padding: 4px 20px 14px; }
-  .js .menu.aberto { display: block; }
+  .menu-btn[aria-expanded="true"] .barras { background: transparent; }
+  .menu-btn[aria-expanded="true"] .barras::before { top: 0; transform: rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .barras::after { top: 0; transform: rotate(-45deg); }
+  .js .menu { position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linha); box-shadow: 0 14px 24px rgba(31, 62, 111, .12); padding: 4px 20px 14px; visibility: hidden; opacity: 0; transform: translateY(-10px); transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+  .js .menu.aberto { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+  .js .menu li { opacity: 0; transform: translateY(-6px); transition: opacity .25s ease, transform .25s ease; }
+  .js .menu.aberto li { opacity: 1; transform: none; }
+  .js .menu.aberto li:nth-child(1) { transition-delay: .05s; }
+  .js .menu.aberto li:nth-child(2) { transition-delay: .1s; }
+  .js .menu.aberto li:nth-child(3) { transition-delay: .15s; }
+  .js .menu.aberto li:nth-child(4) { transition-delay: .2s; }
   .js .nav { flex-direction: column; align-items: stretch; gap: 0; }
   .js .nav a { display: block; padding: 15px 2px; font-size: 1.125rem; border-bottom: 1px solid var(--linha); }
   .js .nav li:last-child a { border-bottom: 0; }
+  .js .nav a::after { display: none; }
   .js .nav a[aria-current="page"] { color: var(--azul-escuro); border-bottom-color: var(--linha); box-shadow: inset 4px 0 0 var(--rosa); padding-left: 14px; }
 }
 
@@ -237,4 +248,4 @@ html:not(.js) .topo nav { width: 100%; }
 .pagina .texto ul.lista-talks { padding-left: 0; }
 .pagina section h2 { margin-top: 1.8em; }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .pilar { transition: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .pilar, .nav a::after { transition: none; } .barras, .barras::before, .barras::after, .js .menu, .js .menu li { transition: none !important; } }
