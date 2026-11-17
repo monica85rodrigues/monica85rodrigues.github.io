@@ -147,6 +147,15 @@ const ano = new Date().getFullYear();
         } else { els.forEach(function (el) { el.classList.add('visto'); }); }
       })();
       (function () {
+        document.querySelectorAll('.flip-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var card = btn.closest('.flip');
+            var virado = card.classList.toggle('virado');
+            btn.setAttribute('aria-pressed', String(virado));
+          });
+        });
+      })();
+      (function () {
         var b = document.querySelector('.menu-btn'), m = document.getElementById('menu-principal');
         if (!b || !m) return;
         function alternar() {

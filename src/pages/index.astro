@@ -4,8 +4,6 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../config.js';
 import hero from '../assets/foto-68.jpg';
 import tempo1 from '../assets/foto-45.jpg';
-import tempo2 from '../assets/foto-35.jpg';
-import tempo3 from '../assets/foto-42.jpg';
 import talkFoto from '../assets/foto-73.jpg';
 import ctaFoto from '../assets/foto-125.jpg';
 ---
@@ -111,20 +109,32 @@ import ctaFoto from '../assets/foto-125.jpg';
   <section class="seccao bastidores">
     <div class="wrap">
       <div class="intro">
-        <p class="eyebrow">Fora do trabalho</p>
-        <h2>O que gosto de fazer nos tempos livres</h2>
-        <ul class="chips">
-          <li>Ler livros</li>
-          <li>Fazer Legos</li>
-          <li>Viajar pelo mundo</li>
-          <li>Experimentar restaurantes</li>
-          <li>Conviver com as pessoas</li>
-        </ul>
+        <p class="eyebrow">Bastidores</p>
+        <h2>O que gosto de fazer fora do trabalho</h2>
+        <p class="dica">Passa o rato (ou toca) em cada cartão para o virares.</p>
       </div>
-      <div class="fotos3">
-        <figure data-reveal><Image src={tempo1} alt="Mónica a sorrir, abraçada a uma pilha de livros" style="object-position: 50% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
-        <figure data-reveal><Image src={tempo2} alt="Mónica a ler um livro, com a cara meio tapada" style="object-position: 100% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
-        <figure data-reveal><Image src={tempo3} alt="Mónica a espreitar, a sorrir, por entre uma fila de livros" style="object-position: 52% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+      <div class="flips">
+        <div class="flip" data-reveal>
+          <div class="flip-in">
+            <div class="flip-frente" aria-hidden="true"><Image src={tempo1} alt="" style="object-position: 50% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /><span class="flip-titulo">Ler livros</span></div>
+            <div class="flip-verso"><h3>Ler livros</h3><p>Sempre que encontro uma pausa, gosto de pegar num livro e ler. Leio sobre desenvolvimento pessoal, liderança e gestão, e também thrillers.</p></div>
+          </div>
+          <button type="button" class="flip-btn" aria-pressed="false" aria-label="Virar o cartão: Ler livros"></button>
+        </div>
+        <div class="flip" data-reveal>
+          <div class="flip-in">
+            <div class="flip-frente flip-legos" aria-hidden="true"><svg viewBox="0 0 64 64" width="84" height="84" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="26" width="48" height="26" rx="4"/><rect x="14" y="16" width="10" height="10" rx="2"/><rect x="27" y="16" width="10" height="10" rx="2"/><rect x="40" y="16" width="10" height="10" rx="2"/></svg><span class="flip-titulo">Fazer Legos</span></div>
+            <div class="flip-verso"><h3>Fazer Legos</h3><p>Uma das minhas paixões é comprar Legos e montá-los. Distrai-me a mente, acalma-me e faz-me sair dos ecrãs.</p></div>
+          </div>
+          <button type="button" class="flip-btn" aria-pressed="false" aria-label="Virar o cartão: Fazer Legos"></button>
+        </div>
+        <div class="flip" data-reveal>
+          <div class="flip-in">
+            <div class="flip-frente flip-viagens" aria-hidden="true"><svg viewBox="0 0 64 64" width="84" height="84" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="9" ry="22"/><path d="M10 32h44M13 20h38M13 44h38"/></svg><span class="flip-titulo">Viajar e explorar o mundo</span></div>
+            <div class="flip-verso"><h3>Viajar e explorar o mundo</h3><p>Outra coisa que gosto de fazer é viajar pelo mundo, conhecer novas culturas, experimentar novos restaurantes e hotéis e conviver com as pessoas.</p></div>
+          </div>
+          <button type="button" class="flip-btn" aria-pressed="false" aria-label="Virar o cartão: Viajar e explorar o mundo"></button>
+        </div>
       </div>
     </div>
   </section>
