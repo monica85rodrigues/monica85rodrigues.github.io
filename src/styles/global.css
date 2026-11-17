@@ -61,7 +61,7 @@ p { margin: 0 0 1.1em; }
   .topo .wrap { gap: 8px; }
   .marca { font-size: 1.02rem; gap: 8px; }
   .marca span { white-space: nowrap; }
-  .marca img { width: 36px; height: auto; }
+  .marca img { display: none; }
   .nav { gap: 14px; }
 }
 
@@ -143,6 +143,14 @@ p { margin: 0 0 1.1em; }
 .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 14px 0 0; }
 .chips li { background: #fff; border: 2px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 8px 18px; font-weight: 600; }
 
+/* Lista de talks */
+.lista-talks { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+.lista-talks a { display: grid; gap: 2px; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 16px 20px; text-decoration: none; color: var(--tinta); }
+.lista-talks a:hover { border-color: var(--azul); }
+.lista-talks .data { font-size: .9375rem; font-weight: 600; color: var(--azul); }
+.lista-talks .titulo { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--azul); line-height: 1.2; }
+.lista-talks .contexto { color: var(--suave); }
+
 /* Redes */
 .redes { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
 .redes a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid currentColor; color: inherit; }
@@ -165,5 +173,6 @@ p { margin: 0 0 1.1em; }
 .pagina { padding: 56px 0 80px; }
 .pagina .texto h2 { font-size: 1.5rem; }
 .pagina .texto ul { padding-left: 1.2em; }
+.pagina .texto ul.lista-talks { padding-left: 0; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }

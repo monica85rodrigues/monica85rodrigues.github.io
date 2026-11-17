@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config.js';
+import { TALKS_ANTERIORES } from '../data/talks.js';
+
+const formatar = (iso) =>
+  new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(iso));
+---
+<Base
+  title="Talks e apresentações"
+  description="As talks e apresentações de Mónica Rodrigues: de «O teu novo par de mãos: AI para engineering managers» a apresentações em comunidades de tecnologia desde 2012."
+  path="/talks/"
+>
+  <div class="wrap pagina">
+    <div class="texto" style="max-width:none">
+      <p class="eyebrow">Talks e apresentações</p>
+      <h1>Onde já falei</h1>
+      <p style="max-width:38em">
+        Gosto de partilhar o que aprendo, em comunidades, eventos e equipas. Aqui ficam as apresentações que fiz,
+        com a ligação para os slides.
+      </p>
+
+      <h2>Mais recentes</h2>
+      <div class="cartoes">
+        <article class="cartao">
+          <p class="eyebrow">GDG Évora · 14 de novembro de 2026</p>
+          <h3>O teu novo par de mãos: AI para engineering managers</h3>
+          <p>A talk sobre como uso AI no dia a dia de uma Engineering Manager, com a demo e o repositório.</p>
+          <a class="btn btn-principal" href="/talk-evora/">Ver a talk</a>
+        </article>
+        <article class="cartao">
+          <p class="eyebrow">Apresentação pública · PDF</p>
+          <h3>Engineering Manager: AI como meu aliado</h3>
+          <p>Os slides da apresentação, para descarregares.</p>
+          <a class="btn btn-secundario" href="/files/Engineering%20Manager%20AI%20como%20meu%20aliado.pdf">Abrir o PDF</a>
+        </article>
+      </div>
+
+      <h2 style="margin-top:2em">Apresentações anteriores</h2>
+      <ul class="lista-talks">
+        {TALKS_ANTERIORES.map((t) => (
+          <li>
+            <a href={t.url} rel="noopener">
+              <span class="data">{formatar(t.data)}</span>
+              <span class="titulo">{t.titulo}</span>
+              {t.contexto && <span class="contexto">{t.contexto}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="botoes">
+        <a class="btn btn-principal" href={SITE.social.linkedin} rel="me noopener">Queres-me convidar? Fala comigo no LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</Base>
