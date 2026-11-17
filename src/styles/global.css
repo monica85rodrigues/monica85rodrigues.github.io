@@ -131,8 +131,6 @@ html:not(.js) .topo nav { width: 100%; }
 .fotos3 { display: grid; gap: 16px; }
 .fotos3 figure { margin: 0; }
 .fotos3 img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
-.fotos3 figure:nth-child(1) img { object-position: 80% 50%; }
-.fotos3 figure:nth-child(3) img { object-position: 78% 50%; }
 @media (min-width: 760px) {
   .fotos3 { grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
   .fotos3 figure:nth-child(2) { margin-top: 36px; }

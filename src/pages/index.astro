@@ -3,9 +3,9 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { SITE } from '../config.js';
 import hero from '../assets/foto-68.jpg';
-import bastidores1 from '../assets/foto-14.jpg';
-import bastidores2 from '../assets/foto-41.jpg';
-import bastidores3 from '../assets/foto-47.jpg';
+import tempo1 from '../assets/foto-45.jpg';
+import tempo2 from '../assets/foto-35.jpg';
+import tempo3 from '../assets/foto-42.jpg';
 import talkFoto from '../assets/foto-73.jpg';
 import ctaFoto from '../assets/foto-125.jpg';
 ---
@@ -111,14 +111,20 @@ import ctaFoto from '../assets/foto-125.jpg';
   <section class="seccao bastidores">
     <div class="wrap">
       <div class="intro">
-        <p class="eyebrow">Bastidores</p>
-        <h2>Livros, post-its e rotinas</h2>
-        <p>O que está por trás do que partilho: o que uso, o que leio e como organizo o meu dia a dia.</p>
+        <p class="eyebrow">Fora do trabalho</p>
+        <h2>O que gosto de fazer nos tempos livres</h2>
+        <ul class="chips">
+          <li>Ler livros</li>
+          <li>Fazer Legos</li>
+          <li>Viajar pelo mundo</li>
+          <li>Experimentar restaurantes</li>
+          <li>Conviver com as pessoas</li>
+        </ul>
       </div>
       <div class="fotos3">
-        <figure data-reveal><Image src={bastidores1} alt="Mónica a escrever em post-its numa parede" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
-        <figure data-reveal><Image src={bastidores2} alt="Mónica a sorrir com uma pilha de livros de liderança" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
-        <figure data-reveal><Image src={bastidores3} alt="Mónica à secretária, a escrever, com o portátil e um microfone" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+        <figure data-reveal><Image src={tempo1} alt="Mónica a sorrir, abraçada a uma pilha de livros" style="object-position: 50% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+        <figure data-reveal><Image src={tempo2} alt="Mónica a ler um livro, com a cara meio tapada" style="object-position: 100% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
+        <figure data-reveal><Image src={tempo3} alt="Mónica a espreitar, a sorrir, por entre uma fila de livros" style="object-position: 52% 50%" widths={[320, 520]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={76} /></figure>
       </div>
     </div>
   </section>
