@@ -85,6 +85,14 @@ p { margin: 0 0 1.1em; }
   .hero .wrap { grid-template-columns: 1.15fr .85fr; gap: 64px; }
 }
 
+/* Faixa de credenciais (home) */
+.credenciais { background: var(--azul); color: #fff; padding: 22px 0; }
+.credenciais ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.credenciais li { font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.credenciais li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--rosa); flex: none; }
+.credenciais a { color: #fff; }
+@media (min-width: 760px) { .credenciais ul { grid-template-columns: repeat(3, auto); justify-content: space-between; } }
+
 /* Secções */
 .seccao { padding: 64px 0; }
 .seccao.alt { background: var(--papel-2); }
@@ -124,6 +132,16 @@ p { margin: 0 0 1.1em; }
 .texto h2 { margin-top: 1.6em; }
 .texto h2:first-child { margin-top: 0; }
 .texto { max-width: 38em; }
+
+/* Comunidade e tempos livres (Sobre) */
+.comunidade { display: grid; gap: 14px; margin: 8px 0 8px; }
+.comunidade article { background: #fff; border: 1px solid var(--linha); border-left: 6px solid var(--rosa); border-radius: 14px; padding: 16px 20px; }
+.comunidade article:nth-child(2) { border-left-color: var(--bege); }
+.comunidade article:nth-child(3) { border-left-color: var(--azul); }
+.comunidade h3 { font-size: 1.15rem; margin-bottom: .25em; }
+.comunidade p { margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 14px 0 0; }
+.chips li { background: #fff; border: 2px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 8px 18px; font-weight: 600; }
 
 /* Redes */
 .redes { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
