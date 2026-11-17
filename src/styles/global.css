@@ -57,17 +57,25 @@ p { margin: 0 0 1.1em; }
 .nav a { font-weight: 600; text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--azul); }
 
-@media (max-width: 600px) {
-  .topo { position: static; }
-  .topo .wrap { flex-wrap: wrap; row-gap: 6px; padding: 12px 0 10px; }
-  .topo nav { width: 100%; }
-  .nav { justify-content: space-between; gap: 12px; }
-}
-@media (max-width: 480px) {
-  .topo .wrap { gap: 8px; }
-  .marca { font-size: 1.02rem; gap: 8px; }
+/* Menu: numa linha no computador; botão "Menu" que abre e fecha no telemóvel */
+.menu-btn { display: none; }
+html:not(.js) .topo .wrap { flex-wrap: wrap; row-gap: 6px; }
+html:not(.js) .topo nav { width: 100%; }
+@media (max-width: 760px) {
+  .marca { font-size: 1.05rem; gap: 8px; }
   .marca span { white-space: nowrap; }
-  .nav { gap: 14px; }
+  .js .menu-btn { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border: 2px solid var(--azul); border-radius: 999px; background: transparent; color: var(--azul); font: 600 1rem var(--sans); cursor: pointer; }
+  .js .menu-btn[aria-expanded="true"] { background: var(--azul); color: #fff; }
+  .barras, .barras::before, .barras::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; }
+  .barras::before, .barras::after { content: ""; position: absolute; left: 0; }
+  .barras::before { top: -6px; }
+  .barras::after { top: 6px; }
+  .js .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--papel); border-bottom: 1px solid var(--linha); box-shadow: 0 14px 24px rgba(31, 62, 111, .12); padding: 4px 20px 14px; }
+  .js .menu.aberto { display: block; }
+  .js .nav { flex-direction: column; align-items: stretch; gap: 0; }
+  .js .nav a { display: block; padding: 15px 2px; font-size: 1.125rem; border-bottom: 1px solid var(--linha); }
+  .js .nav li:last-child a { border-bottom: 0; }
+  .js .nav a[aria-current="page"] { color: var(--azul-escuro); border-bottom-color: var(--linha); box-shadow: inset 4px 0 0 var(--rosa); padding-left: 14px; }
 }
 
 /* Botões */
