@@ -79,6 +79,21 @@ const ano = new Date().getFullYear();
     <link rel="preload" href="/fonts/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 
     <script is:inline>document.documentElement.classList.add('js')</script>
+    <script is:inline>
+      // Ao mudar de página, começa sempre no topo (a não ser que o link tenha uma âncora, como #comunidade)
+      (function () {
+        try { history.scrollRestoration = 'manual'; } catch (e) {}
+        function topo() {
+          if (location.hash) return;
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          try { if (window.parent !== window) window.parent.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) {}
+        }
+        topo();
+        window.addEventListener('pageshow', topo);
+        document.addEventListener('DOMContentLoaded', topo);
+        window.addEventListener('load', topo);
+      })();
+    </script>
     <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
   </head>
   <body>
