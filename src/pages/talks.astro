@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import CabecalhoPagina from '../components/CabecalhoPagina.astro';
-import { SITE } from '../config.js';
 import { TALKS_ANTERIORES } from '../data/talks.js';
 import BandeiraPT from '../components/BandeiraPT.astro';
 
@@ -52,10 +51,6 @@ const formatar = (iso) =>
           </li>
         ))}
       </ul>
-
-      <div class="botoes">
-        <a class="btn btn-principal" href={SITE.social.linkedin} rel="me noopener">Queres-me convidar? Fala comigo no LinkedIn</a>
-      </div>
     </div>
   </div>
 </Base>
