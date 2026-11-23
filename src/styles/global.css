@@ -292,7 +292,7 @@ html:not(.js) .topo nav { width: 100%; }
 .dica { font-weight: 600; color: var(--suave); margin: 4px 0 0; }
 .flips { display: grid; gap: 20px; }
 @media (min-width: 760px) { .flips { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-.flip { position: relative; aspect-ratio: 4 / 5; perspective: 1200px; max-width: 420px; width: 100%; justify-self: center; }
+.flip { position: relative; height: 470px; perspective: 1200px; max-width: 420px; width: 100%; justify-self: center; }
 .flip-in { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.4, .2, .2, 1); }
 .flip.virado .flip-in { transform: rotateY(180deg); }
 @media (hover: hover) { .flip:hover .flip-in { transform: rotateY(180deg); } }
@@ -307,9 +307,9 @@ html:not(.js) .topo nav { width: 100%; }
 .flip-titulo { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; line-height: 1.15; text-align: center; padding: 0 22px; position: relative; z-index: 1; }
 .flip-frente:not(.flip-legos):not(.flip-viagens) { justify-content: flex-end; padding-bottom: 28px; }
 .flip-frente:not(.flip-legos):not(.flip-viagens) .flip-titulo { color: #fff; }
-.flip-verso { background: var(--azul); color: #fff; transform: rotateY(180deg); padding: 30px 28px; display: flex; flex-direction: column; justify-content: center; }
-.flip-verso h3 { color: var(--rosa); font-size: 1.5rem; margin: 0 0 .5em; }
-.flip-verso p { color: #fff; font-size: 1.125rem; line-height: 1.6; margin: 0; }
+.flip-verso { background: var(--azul); color: #fff; transform: rotateY(180deg); padding: 26px 24px; overflow-y: auto; display: flex; flex-direction: column; justify-content: center; }
+.flip-verso h3 { color: var(--rosa); font-size: 1.4rem; line-height: 1.2; margin: 0 0 .5em; }
+.flip-verso p { color: #fff; font-size: 1.0625rem; line-height: 1.55; margin: 0; }
 .flip-btn { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: 0; border-radius: 24px; cursor: pointer; z-index: 2; }
 .flip-btn:focus-visible { outline: 3px solid var(--azul); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { .flip-in { transition: none; } }
@@ -338,3 +338,4 @@ html:not(.js) .topo nav { width: 100%; }
 .sobre-home img { border-radius: 200px 200px 24px 24px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%; width: 100%; }
 @media (min-width: 860px) { .sobre-home .wrap { grid-template-columns: 360px 1fr; gap: 64px; } }
 .lista-talks .lingua { align-self: flex-start; }
+@media (min-width: 760px) and (max-width: 999px) { .flip { height: 540px; } }
