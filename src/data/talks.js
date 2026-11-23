@@ -1,5 +1,7 @@
 // Apresentações anteriores, a partir do site antigo (links originais, ainda por verificar um a um).
 // Sem nomes de empresas: só comunidades e contexto, como a Mónica prefere.
+export const LINGUA_TALKS = 'Português';
+
 export const TALKS_ANTERIORES = [
   {
     titulo: 'SOLID Principles',

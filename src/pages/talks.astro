@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CabecalhoPagina from '../components/CabecalhoPagina.astro';
 import { SITE } from '../config.js';
-import { TALKS_ANTERIORES } from '../data/talks.js';
+import { TALKS_ANTERIORES, LINGUA_TALKS } from '../data/talks.js';
 
 const formatar = (iso) =>
   new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(iso));
@@ -21,17 +21,20 @@ const formatar = (iso) =>
   <div class="wrap pagina">
     <div class="texto" style="max-width:none">
       <h2 class="titulo-sec">Mais recentes</h2>
+      <p class="nota-lingua">Todas as minhas talks e apresentações foram em português.</p>
       <div class="cartoes">
         <article class="cartao" data-reveal>
           <p class="eyebrow">GDG Évora · 14 de novembro de 2026</p>
           <h3>O teu novo par de mãos: AI para engineering managers</h3>
           <p>A talk sobre como uso AI no dia a dia de uma Engineering Manager, com a demo e o repositório.</p>
+          <p><span class="lingua">{LINGUA_TALKS}</span></p>
           <a class="btn btn-principal" href="/talk-evora/">Ver a talk</a>
         </article>
         <article class="cartao" data-reveal>
           <p class="eyebrow">Apresentação pública · PDF</p>
           <h3>Engineering Manager: AI como meu aliado</h3>
           <p>Os slides da apresentação, para descarregares.</p>
+          <p><span class="lingua">{LINGUA_TALKS}</span></p>
           <a class="btn btn-secundario" href="/files/Engineering%20Manager%20AI%20como%20meu%20aliado.pdf">Abrir o PDF</a>
         </article>
       </div>
@@ -44,6 +47,7 @@ const formatar = (iso) =>
               <span class="data">{formatar(t.data)}</span>
               <span class="titulo">{t.titulo}</span>
               {t.contexto && <span class="contexto">{t.contexto}</span>}
+              <span class="lingua">{LINGUA_TALKS}</span>
             </a>
           </li>
         ))}

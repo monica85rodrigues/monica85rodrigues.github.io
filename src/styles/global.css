@@ -342,3 +342,15 @@ html:not(.js) .topo nav { width: 100%; }
     main { animation: pagina-entra .4s ease both; }
   }
 }
+
+/* Língua das talks */
+.lingua { display: inline-block; border: 1.5px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 2px 12px; font-weight: 600; font-size: .875rem; margin-top: 8px; }
+.nota-lingua { margin: 0 0 18px; font-weight: 600; }
+
+/* Home: artigos e sobre mim */
+.artigos-home .wrap { text-align: center; max-width: 44em; }
+.sobre-home .wrap { display: grid; gap: 32px; align-items: center; }
+.sobre-home figure { margin: 0; max-width: 360px; justify-self: center; width: 100%; }
+.sobre-home img { border-radius: 200px 200px 24px 24px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%; width: 100%; }
+@media (min-width: 860px) { .sobre-home .wrap { grid-template-columns: 360px 1fr; gap: 64px; } }
+.lista-talks .lingua { align-self: flex-start; }

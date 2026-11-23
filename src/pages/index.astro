@@ -6,6 +6,7 @@ import hero from '../assets/foto-68.jpg';
 import tempo1 from '../assets/foto-45.jpg';
 import talkFoto from '../assets/foto-73.jpg';
 import ctaFoto from '../assets/foto-125.jpg';
+import sobreFoto from '../assets/foto-83.jpg';
 ---
 <Base
   title="Mónica Rodrigues | IT Leadership: liderança prática para managers em tecnologia"
@@ -156,21 +157,32 @@ import ctaFoto from '../assets/foto-125.jpg';
     </div>
   </section>
 
-  <section class="seccao">
+  <section class="seccao artigos-home">
+    <div class="wrap" data-reveal>
+      <p class="eyebrow">Artigos</p>
+      <h2>Escrevo no Medium</h2>
+      <p>Partilho como faço os 1:1, as dailies e como leio e termino um livro, sempre na primeira pessoa.</p>
+      <a class="btn btn-secundario" href="/artigos/">Ver os artigos</a>
+    </div>
+  </section>
+
+  <section class="seccao alt sobre-home">
     <div class="wrap">
-      <div class="cartoes">
-        <article class="cartao" data-reveal>
-          <p class="eyebrow">Artigos</p>
-          <h3>Escrevo no Medium</h3>
-          <p>Partilho como faço os 1:1, as dailies e como leio e termino um livro, sempre na primeira pessoa.</p>
-          <a class="btn btn-secundario" href="/artigos/">Ver os artigos</a>
-        </article>
-        <article class="cartao" data-reveal>
-          <p class="eyebrow">Sobre mim</p>
-          <h3>De developer a líder</h3>
-          <p>O meu percurso, o que aprendi pelo caminho e o que me move fora do trabalho.</p>
-          <a class="btn btn-secundario" href="/sobre/">Conhece o meu percurso</a>
-        </article>
+      <figure data-reveal>
+        <Image src={sobreFoto} alt="Retrato de Mónica Rodrigues, de blazer azul-marinho" widths={[320, 520, 720]} sizes="(min-width: 860px) 360px, 70vw" format="webp" quality={78} />
+      </figure>
+      <div data-reveal>
+        <p class="eyebrow">Sobre mim</p>
+        <h2>Quem é a Mónica</h2>
+        <p>
+          Sou a Mónica, Engineering Manager. Sou líder há quase 10 anos e Engineering Manager desde 2019,
+          depois de ter sido Software Developer.
+        </p>
+        <p>
+          Ajudo managers e futuros managers em tecnologia a gerir melhor equipas, tempo e projetos,
+          com ferramentas práticas e a experiência de quem conhece o setor por dentro.
+        </p>
+        <a class="btn btn-principal" href="/sobre/">Conhece o meu percurso</a>
       </div>
     </div>
   </section>
