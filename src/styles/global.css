@@ -125,7 +125,7 @@ html:not(.js) .topo nav { width: 100%; }
 .numeros strong { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; color: var(--azul); }
 .numeros span { font-weight: 600; color: var(--suave); font-size: 1rem; }
 .numeros .mais { text-align: center; margin: 26px 0 0; }
-@media (min-width: 760px) { .numeros ul { grid-template-columns: repeat(3, 1fr); } .numeros li + li { border-left: 2px solid var(--rosa); } }
+
 
 /* Bastidores (fotos) */
 .fotos3 { display: grid; gap: 16px; }
