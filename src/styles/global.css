@@ -292,7 +292,7 @@ html:not(.js) .topo nav { width: 100%; }
 .dica { font-weight: 600; color: var(--suave); margin: 4px 0 0; }
 .flips { display: grid; gap: 20px; }
 @media (min-width: 760px) { .flips { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-.flip { position: relative; height: 470px; perspective: 1200px; max-width: 420px; width: 100%; justify-self: center; }
+.flip { position: relative; height: 380px; perspective: 1200px; max-width: 420px; width: 100%; justify-self: center; }
 .flip-in { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.4, .2, .2, 1); }
 .flip.virado .flip-in { transform: rotateY(180deg); }
 @media (hover: hover) { .flip:hover .flip-in { transform: rotateY(180deg); } }
@@ -340,4 +340,4 @@ html:not(.js) .topo nav { width: 100%; }
 @media (min-width: 620px) { .sobre-home .wrap { grid-template-columns: 240px 1fr; gap: 32px; } }
 @media (min-width: 860px) { .sobre-home .wrap { grid-template-columns: 360px 1fr; gap: 64px; } }
 .lista-talks .lingua { align-self: flex-start; }
-@media (min-width: 760px) and (max-width: 999px) { .flip { height: 540px; } }
+@media (min-width: 760px) and (max-width: 999px) { .flip { height: 440px; } }
