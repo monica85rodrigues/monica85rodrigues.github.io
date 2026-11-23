@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import { SITE } from '../config.js';
 import hero from '../assets/foto-68.jpg';
 import tempo1 from '../assets/foto-45.jpg';
+import legos from '../assets/legos.jpg';
 import talkFoto from '../assets/foto-73.jpg';
 import sobreFoto from '../assets/foto-83.jpg';
 ---
@@ -108,7 +109,7 @@ import sobreFoto from '../assets/foto-83.jpg';
         </div>
         <div class="flip" data-reveal>
           <div class="flip-in">
-            <div class="flip-frente flip-legos" aria-hidden="true"><svg viewBox="0 0 64 64" width="84" height="84" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="26" width="48" height="26" rx="4"/><rect x="14" y="16" width="10" height="10" rx="2"/><rect x="27" y="16" width="10" height="10" rx="2"/><rect x="40" y="16" width="10" height="10" rx="2"/></svg><span class="flip-titulo">Fazer Legos</span></div>
+            <div class="flip-frente" aria-hidden="true"><Image src={legos} alt="" style="object-position: 50% 55%" widths={[480, 720, 960, 1200]} sizes="(min-width: 760px) 330px, 90vw" format="webp" quality={86} /><span class="flip-titulo">Fazer Legos</span></div>
             <div class="flip-verso"><h3>Fazer Legos</h3><p>Uma das minhas paixões é comprar Legos e montá-los. Distrai-me a mente, acalma-me e faz-me sair dos ecrãs.</p></div>
           </div>
           <button type="button" class="flip-btn" aria-pressed="false" aria-label="Virar o cartão: Fazer Legos"></button>
