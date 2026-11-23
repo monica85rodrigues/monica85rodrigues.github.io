@@ -118,15 +118,6 @@ html:not(.js) .topo nav { width: 100%; }
 .btn-branco { background: transparent; color: #fff; border-color: #fff; }
 .btn-branco:hover { background: #fff; color: var(--azul); }
 
-/* Números (home) */
-.numeros { padding: 52px 0 12px; }
-.numeros ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; text-align: center; }
-.numeros li { display: grid; gap: 2px; }
-.numeros strong { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; color: var(--azul); }
-.numeros span { font-weight: 600; color: var(--suave); font-size: 1rem; }
-.numeros .mais { text-align: center; margin: 26px 0 0; }
-
-
 /* Bastidores (fotos) */
 .fotos3 { display: grid; gap: 16px; }
 .fotos3 figure { margin: 0; }
