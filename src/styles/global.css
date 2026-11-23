@@ -304,6 +304,7 @@ html:not(.js) .topo nav { width: 100%; }
 .flip-legos { background: var(--rosa); }
 .flip-viagens { background: var(--bege); }
 .flip-legos::after, .flip-viagens::after { display: none; }
+.flip-local { position: absolute; top: 16px; left: 16px; z-index: 1; background: rgba(31,62,111,.82); color: #fff; font-weight: 600; font-size: .9375rem; letter-spacing: .02em; padding: 6px 14px; border-radius: 999px; }
 .flip-titulo { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; line-height: 1.15; text-align: center; padding: 0 22px; position: relative; z-index: 1; }
 .flip-frente:not(.flip-legos):not(.flip-viagens) { justify-content: flex-end; padding-bottom: 28px; }
 .flip-frente:not(.flip-legos):not(.flip-viagens) .flip-titulo { color: #fff; }
