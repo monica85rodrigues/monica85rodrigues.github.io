@@ -329,8 +329,8 @@ html:not(.js) .topo nav { width: 100%; }
 }
 
 /* Língua das talks */
-.lingua { display: inline-block; border: 1.5px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 2px 12px; font-weight: 600; font-size: .875rem; margin-top: 8px; }
-.nota-lingua { margin: 0 0 18px; font-weight: 600; }
+.lingua { width: fit-content; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--azul); color: var(--azul); border-radius: 999px; padding: 2px 12px; font-weight: 600; font-size: .875rem; margin-top: 8px; }
+.lingua .bandeira { border-radius: 2px; box-shadow: 0 0 0 1px rgba(31,62,111,.25); flex: none; }
 
 /* Home: artigos e sobre mim */
 .artigos-home .wrap { text-align: center; max-width: 44em; }
