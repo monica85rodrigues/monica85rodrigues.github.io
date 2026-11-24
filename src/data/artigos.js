@@ -49,11 +49,6 @@ export const PILARES_ARTIGOS = [
     nome: 'Jornada',
     artigos: [
       {
-        titulo: 'How I made the transition from developer to engineering manager',
-        resumo: 'A minha transição de developer para Engineering Manager.',
-        url: 'https://monica85rodrigues.medium.com/how-i-made-the-transition-from-developer-to-engineering-manager-e906ef4b40c4',
-      },
-      {
         titulo: 'How I’m reading and finishing a book',
         resumo: 'O método que uso para ler e terminar livros.',
         url: 'https://monica85rodrigues.medium.com/how-im-reading-and-finishing-a-book-4d0de57192a3',
