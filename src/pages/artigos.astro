@@ -8,14 +8,14 @@ const formatar = (iso) =>
   new Intl.DateTimeFormat('pt-PT', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(iso));
 ---
 <Base
-  title="Artigos sobre liderança em tecnologia"
-  description="Artigos de Mónica Rodrigues sobre o dia a dia de uma Engineering Manager: 1:1, dailies, organização do trabalho, decisões, equipas e a transição de developer para líder."
+  title="Artigos: liderança, bastidores e o que penso"
+  description="Artigos de Mónica Rodrigues no Medium: o dia a dia de uma Engineering Manager (1:1, dailies, organização, decisões, equipas), os bastidores, viagens e pensamentos sobre a vida fora da área."
   path="/artigos/"
 >
   <CabecalhoPagina eyebrow="Artigos" titulo="O que escrevo">
     <p>
-      Escrevo no Medium sobre o que vivo como Engineering Manager, sempre na primeira pessoa:
-      o que faço, o que mudei e o que aprendi.
+      Escrevo no Medium sobre o que vivo e o que penso, sempre na primeira pessoa. Falo de liderança em tecnologia,
+      mas também de bastidores, de viagens, de pensamentos mais filosóficos e de outros temas fora da minha área.
     </p>
   </CabecalhoPagina>
   <div class="wrap pagina">
@@ -23,7 +23,7 @@ const formatar = (iso) =>
       <p class="aviso">
         <strong>Antes de leres:</strong> os artigos estão em inglês e alguns são antigos, por isso há práticas que já mudaram.
         Por exemplo, hoje faço os 1:1 de 15 em 15 dias, e no artigo eram mensais.
-        No Medium vais encontrar também artigos dos meus tempos de developer e outros que fogem a estes temas, como ser feliz.
+        No Medium vais encontrar também artigos dos meus tempos de developer e sobre outros temas, como ser feliz.
       </p>
 
       {PILARES_ARTIGOS.map((p) => (
